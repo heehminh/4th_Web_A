@@ -1,3 +1,4 @@
+// 이미지 넘어감
 let slides = document.querySelector(".slides");
 let slideImg = document.querySelectorAll(".slides li");
 currentIdx = 0;
@@ -52,3 +53,18 @@ prev.addEventListener("click", function () {
   }
   currentIdx -= 1;
 });
+// 비동기 처리
+setInterval(async () => {
+  if (currentIdx <= slideCount - 1) {
+    slides.style.left = -(currentIdx + 2) * (slideWidth + slideMargin) + "px";
+    slides.style.transition = `${0.5}s ease-out`;
+  }
+  if (currentIdx === slideCount - 1) {
+    setTimeout(function () {
+      slides.style.left = -(slideWidth + slideMargin) + "px";
+      slides.style.transition = `${0}s ease-out`;
+    }, 500);
+    currentIdx = -1;
+  }
+  currentIdx += 1;
+}, 5000);
