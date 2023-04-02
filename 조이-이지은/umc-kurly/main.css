@@ -146,10 +146,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex-direction: row; */
 }
-/* .logo-1 {
-} */
+
 .logo-2 {
   padding: 0 2rem 0 0.8rem;
   font-size: 0.8rem;
@@ -225,10 +223,56 @@ body {
 }
 
 /* main */
-
 .main-1 {
   display: flex;
   justify-content: center;
+}
+
+#slideShow {
+  width: 1900px;
+  height: 370px;
+  position: relative;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1900px; /* 슬라이드할 사진과 마진 총 넓이 */
+  transition: 0.5s ease-out;
+}
+.slides:hover {
+  cursor: pointer;
+}
+.slides li:first-child {
+  margin-left: 90px;
+} /* 슬라이드들 옆으로 정렬 */
+.slides li:not(:last-child) {
+  float: left;
+  margin-right: 80px;
+}
+.controller span {
+  position: absolute;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  margin: 0 250px;
+  top: 30%;
+  font-size: 1.3em;
+  cursor: pointer;
+} /* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+.controller span:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
 }
 .main-2 {
   display: flex;
@@ -272,13 +316,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.main-4 {
-  display: flex;
-}
-.main-4-sale {
-}
-/* footer */
-.footer {
-  border: 3px solid yellow;
+  margin-bottom: 30rem;
 }
