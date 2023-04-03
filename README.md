@@ -5,11 +5,6 @@
 ## 🌱 Pull Requests Rule 
 **Title**: N주차미션_닉네임 (ex. 1주차미션_유닝이)
 
-**Assignees(PR 담당자)**: 본인
-
-**Labels**: mission
-
-
 ## ✔ Commit Message Convention
 CHORE: 코드 수정, 내부 파일 수정
 
