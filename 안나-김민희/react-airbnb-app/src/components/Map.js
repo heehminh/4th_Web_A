@@ -262,11 +262,7 @@ const Map = () => {
     );
   }, [initMap, loadScript]);
 
-  return (
-    <div ref={mapElement} id="map">
-      Map
-    </div>
-  );
+  return <div ref={mapElement} id="map"></div>;
 };
 
 export default Map;

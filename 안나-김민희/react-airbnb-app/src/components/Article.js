@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import rooms from "../data/rooms";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination } from "swiper";
+import "swiper/scss";
+import "swiper/scss/navigation";
+import "swiper/scss/pagination";
+
+SwiperCore.use([Navigation, Pagination]);
 
 const Article = () => {
   const [likedRooms, setLikedRooms] = useState([]);
@@ -13,11 +20,28 @@ const Article = () => {
 
   return (
     <article className="room">
-      {rooms.map((room, index) => (
-        <div className="room__item" key={index}>
-          <div className="room__item__imgBox">
-            <img className="imgBox" src={room.img} alt="imgBox" />
-            {likedRooms[index] ? (
+      {rooms.map((room, index) => {
+        const { img, loc, star, plus, when, price, standard } = room;
+        const liked = likedRooms[index];
+
+        return (
+          <div className="room__item" key={index}>
+            <Swiper
+              className="room__item__imgBox"
+              spaceBetween={50}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              loop
+            >
+              {img.map((src, index) => (
+                <SwiperSlide key={index}>
+                  <img className="imgBox" src={src} alt="imgBox" />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {liked ? (
               <HeartFilled
                 className="room__like"
                 onClick={() => toggleLike(index)}
@@ -28,20 +52,21 @@ const Article = () => {
                 onClick={() => toggleLike(index)}
               />
             )}
-          </div>
-          <div className="room__item__textBox">
-            <div className="textBox__1">
-              <div className="textBox__1__loc">{room.loc}</div>
-              <div className="textBox__1__star">★ {room.star}</div>
+
+            <div className="room__item__textBox">
+              <div className="textBox__1">
+                <div className="textBox__1__loc">{loc}</div>
+                <div className="textBox__1__star">★ {star}</div>
+              </div>
+              <div className="textBox__2">{plus}</div>
+              <div className="textBox__2">{when}</div>
+              <div className="textBox__3">
+                ₩{price.toLocaleString("ko-KR")} /{standard}
+              </div>
             </div>
-            <div className="textBox__2">{room.plus}</div>
-            <div className="textBox__2">{room.when}</div>
-            <div className="textBox__3">
-              ₩{room.price.toLocaleString("ko-KR")} /{room.standard}
-            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </article>
   );
 };
