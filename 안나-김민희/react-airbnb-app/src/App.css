@@ -233,13 +233,21 @@ footer {
   border-radius: 10px;
 }
 
-.imgBox__like {
+.room__like {
   position: absolute;
-  top: 0;
+  top: 10;
   right: 0;
-  width: 40px;
-  height: 40px;
-  margin: 10px;
+  padding: 20px 10px;
+  color: rgb(255, 56, 92);
+  font-size: 30px;
+}
+
+.room__unlike {
+  position: absolute;
+  top: 10;
+  right: 0;
+  padding: 20px 10px;
+  font-size: 30px;
 }
 
 .room__item__textBox {
