@@ -75,8 +75,14 @@ Header {
 }
 
 .header__setting-description {
+  padding: 15px;
   font-size: 16px;
   color: black;
+}
+
+.header__setting-description:hover {
+  border-radius: 35px;
+  background-color: #ececec;
 }
 
 .header__setting-icon {
