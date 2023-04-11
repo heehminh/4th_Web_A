@@ -11,11 +11,7 @@ const App = () => {
 
   const changeContent = () => {
     setClick(!click);
-    if (click) {
-      setButton(button_content[0]);
-    } else {
-      setButton(button_content[1]);
-    }
+    click ? setButton(button_content[0]) : setButton(button_content[1]);
   };
 
   return (
