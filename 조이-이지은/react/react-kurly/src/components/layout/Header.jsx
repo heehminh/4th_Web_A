@@ -8,6 +8,8 @@ import Search from "../images/r-search.png";
 import Place from "../images/r-place.png";
 import List from "../images/r-list.png";
 
+import "./Header.css";
+
 const Header = () => {
   return (
     <div>
@@ -26,7 +28,9 @@ const Header = () => {
         </section>
         <section className="header-2">
           <div>
-            <img src={Logo} alt="logo" />
+            <Link to={"/"}>
+              <img src={Logo} alt="logo" />
+            </Link>
           </div>
           <div className="logo-2">
             <span className="highlight">마켓컬리</span> | 뷰티컬리
