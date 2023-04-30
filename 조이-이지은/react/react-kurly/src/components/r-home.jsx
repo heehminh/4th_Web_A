@@ -16,23 +16,8 @@ function Home() {
             <li className="logins">
               <span className="highlight">회원가입</span>
             </li>
-            |
-            <li
-              className="logins"
-              // onMouseEnter={handleMouseEnter}
-              // onMouseLeave={handleMouseLeave}
-            >
-              로그인
-            </li>
-            |
-            <li
-              className="logins"
-              // onMouseEnter={handleMouseEnter}
-              // onMouseLeave={handleMouseLeave}
-              // style={hoverColor}
-            >
-              고객센터
-            </li>
+            |<li className="logins">로그인</li>|
+            <li className="logins">고객센터</li>
           </ul>
         </section>
         <section className="header-2">
