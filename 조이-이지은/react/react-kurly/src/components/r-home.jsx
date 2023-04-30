@@ -8,16 +8,6 @@ import Place from "../images/r-place.png";
 import List from "../images/r-list.png";
 
 function Home() {
-  // const [isHovered, setIsHovered] = useState(false);
-  // const handleMouseEnter = () => {
-  //   setIsHovered(true);
-  // };
-  // const handleMouseLeave = () => {
-  //   setIsHovered(false);
-  // };
-  // //  const color = isHovered ? "purple" : "grey";
-  //  const hoverColor = { color };
-
   return (
     <div>
       <header className="header">
