@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const RoomHeader = () => {
   const navigate = useNavigate();
   return (
     <header>
@@ -12,17 +12,9 @@ const Header = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"
         />
       </div>
-      <div className="header__search-bar">
+      <div className="header__search-bar-room">
         <button className="search-bar-button" id="button-where">
-          어디든지
-        </button>
-        <span> | </span>
-        <button className="search-bar-button" id="button-week">
-          언제든 일주일
-        </button>
-        <span> | </span>
-        <button className="search-bar-button" id="button-guest">
-          게스트 추가
+          검색 시작하기
         </button>
         <img
           alt="search-bar"
@@ -33,9 +25,9 @@ const Header = () => {
       <div className="header__setting">
         <div
           className="header__setting-description"
-          onClick={() => navigate(`../host`)}
+          onClick={() => navigate("/host")}
         >
-          당신의 공간을 에어비엔비하세요
+          당신의 공간을 에어비앤비하세요
         </div>
         <div className="header__setting-icon">
           <img alt="setting" src="../assets/home-setting.png" />
@@ -61,4 +53,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default RoomHeader;
