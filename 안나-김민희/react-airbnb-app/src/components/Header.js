@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <header>
       <div className="header__logo">
@@ -29,7 +31,10 @@ const Header = () => {
         />
       </div>
       <div className="header__setting">
-        <div className="header__setting-description">
+        <div
+          className="header__setting-description"
+          onClick={() => navigate(`../host`)}
+        >
           당신의 공간을 에어비엔비하세요
         </div>
         <div className="header__setting-icon">
