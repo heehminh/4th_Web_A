@@ -1,0 +1,104 @@
+#footer-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+/* section1 */
+#happy-customer {
+  display: flex;
+  flex-direction: column;
+}
+#introduce {
+  display: flex;
+  flex-direction: column;
+}
+#happy-introduce {
+  display: flex;
+}
+.happy-customer-label {
+  padding-bottom: 17px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+}
+.happy-customer-number {
+  display: block;
+  padding-bottom: 20px;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 700;
+}
+.happy-customer-number span {
+  margin-left: 8px;
+  font-weight: normal;
+  font-size: 16px;
+}
+#happy-customer p {
+  font-size: 14px;
+  margin-top: 2px;
+  color: rgb(153, 153, 153);
+  letter-spacing: -0.5px;
+  line-height: 16.8px;
+}
+#happy-customer button {
+  width: 140px;
+  height: 40px;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 3px;
+  line-height: 39px;
+  text-align: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+}
+#kakao-time {
+  display: flex;
+}
+#one-time {
+  display: flex;
+}
+#large-time {
+  display: flex;
+}
+/* section2 */
+#introduce ul {
+  display: flex;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 0 29px;
+}
+#introduce ul li {
+  padding: 0 5px 0;
+}
+#introduce div {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgb(153, 153, 153);
+  margin-bottom: 40px;
+}
+#introduce span {
+  color: #5f0080;
+}
+/* section3 */
+#cert {
+  border-top: 1px solid rgb(238, 238, 238);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* section4 */
+#corp {
+  display: flex;
+  padding: 20px 0px 30px;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  background-color: rgb(247, 247, 247);
+  color: rgb(153, 153, 153);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
