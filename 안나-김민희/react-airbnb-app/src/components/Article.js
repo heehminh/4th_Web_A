@@ -8,18 +8,14 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 
 SwiperCore.use([Navigation, Pagination]);
-const initialLikeData = localStorage.getItem("newLikedRooms")
-  ? JSON.parse(localStorage.getItem("newLikedRooms"))
-  : [];
 
 const Article = () => {
-  const [likedRooms, setLikedRooms] = useState(initialLikeData);
+  const [likedRooms, setLikedRooms] = useState([]);
 
   const toggleLike = (index) => {
     const newLikedRooms = [...likedRooms];
     newLikedRooms[index] = !newLikedRooms[index];
     setLikedRooms(newLikedRooms);
-    localStorage.setItem("newLikedRooms", JSON.stringify(newLikedRooms));
   };
 
   return (
