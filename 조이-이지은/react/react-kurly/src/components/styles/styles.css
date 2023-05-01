@@ -122,6 +122,63 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Swiper css */
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* swiper 파란 button 변경 */
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #000;
+  opacity: 0.5;
+  padding: 7px 15px;
+  margin: 0 15px 0 15px;
+  border-radius: 40px;
+  color: #fff !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+}
 /* 시작 */
 img {
   cursor: pointer;

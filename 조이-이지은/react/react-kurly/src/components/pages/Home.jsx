@@ -1,4 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "./Home.css";
 import "../styles/styles.css";
@@ -8,44 +16,58 @@ function Home() {
     <div id="home-all">
       <main>
         <section className="main-1">
-          <div id="slideShow">
-            <ul className="slides">
-              <li>
-                <img
-                  src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/5b4e9985-9b15-4852-ae89-ffbed676c7c7.jpg"
-                  alt="price"
-                />
-              </li>
-              <li>
-                <img
-                  src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/f70905f4-7ef0-4b52-98a3-204c85a3d1ca.png"
-                  alt="price"
-                />
-              </li>
-              <li>
-                <img
-                  src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/6dcb9a88-452e-4545-a452-0b9855112f7f.jpg"
-                  alt="price"
-                />
-              </li>
-              <li>
-                <img
-                  src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/cbd9a5cc-a0f8-4bd7-ba85-92ede8fc82c9.jpg"
-                  alt="price"
-                />
-              </li>
-              <li>
-                <img
-                  src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/f70905f4-7ef0-4b52-98a3-204c85a3d1ca.png"
-                  alt="price"
-                />
-              </li>
+          <Swiper
+            id="slideShow"
+            pagination={{
+              type: "fraction",
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            <ul>
+              <SwiperSlide>
+                <li>
+                  <img
+                    src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/5b4e9985-9b15-4852-ae89-ffbed676c7c7.jpg"
+                    alt="price"
+                  />
+                </li>
+              </SwiperSlide>
+              <SwiperSlide>
+                <li>
+                  <img
+                    src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/f70905f4-7ef0-4b52-98a3-204c85a3d1ca.png"
+                    alt="price"
+                  />
+                </li>
+              </SwiperSlide>
+              <SwiperSlide>
+                <li>
+                  <img
+                    src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/6dcb9a88-452e-4545-a452-0b9855112f7f.jpg"
+                    alt="price"
+                  />
+                </li>
+              </SwiperSlide>
+              <SwiperSlide>
+                <li>
+                  <img
+                    src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/cbd9a5cc-a0f8-4bd7-ba85-92ede8fc82c9.jpg"
+                    alt="price"
+                  />
+                </li>
+              </SwiperSlide>
+              <SwiperSlide>
+                <li>
+                  <img
+                    src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/f70905f4-7ef0-4b52-98a3-204c85a3d1ca.png"
+                    alt="price"
+                  />
+                </li>
+              </SwiperSlide>
             </ul>
-          </div>
-          <p className="controller">
-            <span className="prev">&lang;</span>
-            <span className="next">&rang;</span>
-          </p>
+          </Swiper>
         </section>
 
         <section className="main-2">
@@ -54,11 +76,13 @@ function Home() {
           </div>
           <div className="main-2-wrap">
             <div className="main-2-img">
-              <img
-                src="https://img-cf.kurly.com/shop/data/goods/1637147626889l0.jpg"
-                width="230px"
-                alt="egg"
-              />
+              <Link to={"/egg"}>
+                <img
+                  src="https://img-cf.kurly.com/shop/data/goods/1637147626889l0.jpg"
+                  width="230px"
+                  alt="egg"
+                />
+              </Link>
               <span className="main-2-name">
                 [KF365] 1+등급 무항생제 특란 20구
               </span>
