@@ -9,10 +9,11 @@ import Place from "../images/r-place.png";
 import List from "../images/r-list.png";
 
 import "./Header.css";
+import "../styles/styles.css";
 
 const Header = () => {
   return (
-    <div>
+    <div id="header-all">
       <header className="header">
         <section className="header-1">
           <ul className="login-1">

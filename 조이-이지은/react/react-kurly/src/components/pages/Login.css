@@ -3,6 +3,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+  width: 100%;
 }
 #login-label {
   font-size: 1.2rem;
@@ -33,7 +35,6 @@
 .login-page-2 {
   display: flex;
   list-style-type: none;
-  justify-content: flex-end;
   margin-left: 10rem;
   font-size: small;
   padding: 1rem 0 1.5rem 0;

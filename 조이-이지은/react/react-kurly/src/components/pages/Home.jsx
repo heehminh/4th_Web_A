@@ -1,11 +1,12 @@
 import React from "react";
 
 import "./Home.css";
+import "../styles/styles.css";
 
 function Home() {
   return (
-    <div>
-      <main className="main">
+    <div id="home-all">
+      <main>
         <section className="main-1">
           <div id="slideShow">
             <ul className="slides">

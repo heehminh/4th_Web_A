@@ -1,13 +1,11 @@
 /* header */
-body {
+#header-all {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-list {
-  list-style-type: none;
-}
+
 .header {
   display: flex;
   justify-content: center;

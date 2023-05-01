@@ -1,142 +1,12 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* 시작 */
-
 /* main */
-.main-1 {
+/* .main-1 {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #slideShow {
-  width: 1900px;
+  width: 1700px;
   height: 370px;
   position: relative;
   margin: 10px auto;
@@ -147,7 +17,7 @@ table {
   position: absolute;
   left: 0;
   top: 0;
-  width: 1900px; /* 슬라이드할 사진과 마진 총 넓이 */
+  width: 1900px;
   transition: 0.5s ease-out;
 }
 .slides:hover {
@@ -155,11 +25,12 @@ table {
 }
 .slides li:first-child {
   margin-left: 90px;
-} /* 슬라이드들 옆으로 정렬 */
+}
 .slides li:not(:last-child) {
   float: left;
   margin-right: 80px;
 }
+
 .controller span {
   position: absolute;
   background-color: transparent;
@@ -171,7 +42,7 @@ table {
   top: 30%;
   font-size: 1.3em;
   cursor: pointer;
-} /* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+}
 .controller span:hover {
   background-color: rgba(128, 128, 128, 0.5);
 }
@@ -180,6 +51,13 @@ table {
 }
 .next {
   right: 10px;
+} */
+#home-all {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 586px;
+  /* margin-bottom: 50rem; */
 }
 .main-2 {
   display: flex;
@@ -223,9 +101,4 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30rem;
-}
-
-img {
-  cursor: pointer;
 }

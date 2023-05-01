@@ -1,6 +1,7 @@
 import React from "react";
 import SNS from "../images/sns.png";
 import "./Footer.css";
+import "../styles/styles.css";
 import Cert from "../images/certification.png";
 
 const Footer = () => {
@@ -62,12 +63,12 @@ const Footer = () => {
             <br />
             팩스: 070 - 7500 - 6098
             <br />
-            <img src={SNS} alt="SNS" width={300} rem />
+            <img src={SNS} alt="SNS" width={300} px />
           </div>
         </section>
       </section>
       <section id="cert">
-        <img src={Cert} alt="certification" width={1500} rem></img>
+        <img src={Cert} alt="certification" width={1500} px></img>
       </section>
       <section id="corp">
         컬리에서 판매되는 상품 중에는 컬리에 입점한 개별 판매자가 판매하는
