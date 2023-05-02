@@ -2,7 +2,7 @@ import React from 'react';
 import * as F from './EditorHeader.styled';
 import { useEditor } from '../../../context/useEditorHeader/useEditor';
 import { CustomFile } from '../hooks/CustomFile';
-import { SvgWrapper } from '../../../components/utils/styleUtility';
+import { SvgWrapper } from '../../../components/styleUtility';
 import { ReactComponent as RunIcon } from '../../../assets/icons/EditorHeader/run_icon.svg';
 import { ReactComponent as CodeSplit } from '../../../assets/icons/EditorHeader/code_split.svg';
 import { ReactComponent as HBar } from '../../../assets/icons/EditorHeader/h_bar.svg';

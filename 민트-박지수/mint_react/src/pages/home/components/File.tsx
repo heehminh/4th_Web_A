@@ -4,7 +4,7 @@ import { CustomFile } from '../hooks/CustomFile';
 import { ReactComponent as ReactIcon } from '../../../assets/icons/fileIcons/css.svg';
 import { useFolder } from '../../../context/useFolder/useFolder';
 import { useEditor } from '../../../context/useEditorHeader/useEditor';
-import { SvgWrapper } from '../../../components/utils/styleUtility';
+import { SvgWrapper } from '../../../components/styleUtility';
 
 const File: React.FC<{ file: CustomFile; depth: number }> = ({ file, depth }) => {
   const { deleteItem } = useFolder();
