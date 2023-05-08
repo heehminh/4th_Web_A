@@ -1,36 +1,41 @@
-import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useState} from "react";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import '../App.css';
 
 const Header = () => {
-    const [activeLogo, setActiveLogo] = useState(null);
+    const [activeLogo, setActiveLogo] = useState('');
 
-    function handleMouseOver(event) {
-        setActiveLogo(event.target);
-    }
+    const handleMouseOver = (e) => {
+    setActiveLogo(e.target.className)
+    };
 
-    function handleMouseOut() {
-        setActiveLogo(null);
-    }
+    const handleMouseOut = () => {
+    setActiveLogo('')
+    };   
 
-    const logoClass = (logo) => `Btn_login Small_logo Btn_join Btn_customer Btn_howto Btn_world Search_logo Pre_btn Next_btn Btn_1 Btn_2 Btn_3 Btn_4 Btn_5 Btn_6 Btn_7 Btn_8 Btn_9 Btn_10 Btn_11 ${logo === activeLogo ? 'active' : ''}`;
+    const logoClass = (logo) => `${logo} ${logo === activeLogo ? 'hover' : ''}`
     return (
         <header className="Header_wrap">
                 <div className="Service_wrap">
                     <span className="Small_logo"></span>
                     <div className="Service_list_wrap">
                     <ul className="Service_list">
-                        <li className="Btn_login">
-                        <Link to="/login"></Link>
+                        <li className = 'Btn_login'
+                            onMouseOver={handleMouseOver}
+                            onMouseOut={handleMouseOut}
+                        >
+                        <NavLink to="/login" style={{ textDecoration: "none"}}>로그인</NavLink>
                         </li>
-                        <li className="Btn_join">
-                        <Link to="/join"></Link>
+                        <li className={logoClass("Btn_join")}
+                            onMouseOver={handleMouseOver}
+                            onMouseOut={handleMouseOut}>
+                        <NavLink to="/join" style={{ textDecoration: "none" }}>회원가입</NavLink>
                         </li>
                         <li className="Btn_customer">
-                        <Link to="/customer"></Link>
+                        <Link to="/customer" style={{ textDecoration: "none" }}>고객센터</Link>
                         </li>
                         <li className="Btn_howto">
-                        <Link to="/howto"></Link>
+                        <Link to="/howto" style={{ textDecoration: "none" }}>이용안내</Link>
                         </li>
                     </ul>
                     <span className="Btn_world"></span>
@@ -59,7 +64,7 @@ const Header = () => {
                 </div>
                 <hr className="Header_hr" />
                 <nav className="Menu_list">
-                    <a className="Btn_1"></a>
+                    <a className="Btn_1" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}></a>
                     <a className="Btn_2"></a>
                     <a className="Btn_3"></a>
                     <a className="Btn_4"></a>
