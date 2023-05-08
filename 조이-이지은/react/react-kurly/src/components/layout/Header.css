@@ -121,3 +121,11 @@
   color: #5f0080;
   font-weight: bold;
 }
+.main-2-img {
+  position: relative;
+}
+.main-cart-img {
+  position: absolute;
+  top: 48%;
+  left: 70%;
+}

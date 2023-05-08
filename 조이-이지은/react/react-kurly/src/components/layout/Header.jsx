@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import CountContext from "../contexts/CountContext";
 import Logo from "../images/r-logo.png";
 import Heart from "../images/r-heart.png";
 import Cart from "../images/r-cart.png";
