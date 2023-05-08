@@ -15,6 +15,10 @@ import { Slide2 } from "../images/imgSrc";
 import { Slide3 } from "../images/imgSrc";
 import { Slide4 } from "../images/imgSrc";
 import { Slide5 } from "../images/imgSrc";
+import { New1 } from "../images/imgSrc";
+import { New2 } from "../images/imgSrc";
+import { New3 } from "../images/imgSrc";
+import { New4 } from "../images/imgSrc";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -111,6 +115,44 @@ function Home() {
         </section>
         <section className="main-3">
           <img src={FooterBanner} alt="footer-banner" />
+        </section>
+        <section className="main-2">
+          <div id="main-2-ment" alt="how-about?"></div>
+          <div className="main-2-wrap">
+            <div className="main-2-img">
+              <Link to={"/egg"}>
+                <img src={New1} width="230px" alt="egg" />
+                <img src={MainCart} alt="main-cart" />
+              </Link>
+              <span className="main-2-name">[네떼] 부드러운 샐러드 65g </span>
+              <span className="main-2-price">1,615원</span>
+              <span className="main-2-re">후기 9,999+</span>
+            </div>
+            <div className="main-2-img">
+              <img src={New2} width="230px" alt="choco" />
+              <span className="main-2-name">
+                [Perfect Cut] 우대꽃갈비 스테이크 600g{" "}
+              </span>
+              <span className="main-2-price"> 28,728원</span>
+              <span className="main-2-re">후기 999+</span>
+            </div>
+            <div className="main-2-img">
+              <img src={New3} width="230px" alt="plate" />
+              <span className="main-2-name">
+                [바샤커피] 드립백 어쏘티드 세트 12종 (25개입 / 쇼핑백 포함){" "}
+              </span>
+              <span className="main-2-price">66,960원~</span>
+              <span className="main-2-re">후기 790</span>
+            </div>
+            <div className="main-2-img">
+              <img src={New4} width="230px" alt="ddeok" />
+              <span className="main-2-name">
+                [서울우유] 비요뜨 요거트 4종 (택1){" "}
+              </span>
+              <span className="main-2-price"> 1,380원</span>
+              <span className="main-2-re"> 후기 9,999+</span>
+            </div>
+          </div>
         </section>
       </main>
     </div>

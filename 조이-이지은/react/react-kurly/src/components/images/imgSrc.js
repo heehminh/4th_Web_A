@@ -10,7 +10,14 @@ export const Plate =
   "https://img-cf.kurly.com/shop/data/goods/1589873216873l0.jpg";
 export const FooterBanner =
   "https://product-image.kurly.com/banner/random-band/mobile/img/585a35ba-4d17-428d-ae78-750c5dd66189.jpg";
-
+export const New1 =
+  "https://img-cf.kurly.com/shop/data/goods/1552630796777l0.jpg";
+export const New2 =
+  "https://product-image.kurly.com/product/image/bdacba80-2276-4f91-8f98-1637769f4c0d.jpg";
+export const New3 =
+  "https://product-image.kurly.com/product/image/75118b09-1c75-4444-81cc-431a551536d6.jpg";
+export const New4 =
+  "https://img-cf.kurly.com/shop/data/goods/1647483683658l0.jpg";
 export const Slide1 =
   "https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/5b4e9985-9b15-4852-ae89-ffbed676c7c7.jpg";
 export const Slide2 =
