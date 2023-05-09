@@ -13,15 +13,17 @@ const Home = () => {
     setClick(!click);
     click ? setButton(button_content[0]) : setButton(button_content[1]);
   };
+
+  const [typeIndex, setTypeIndex] = useState(0);
   return (
     <div className="App">
       <div className="wrapper">
         <div className="wrapper__header">
           <Header />
           <div className="line"></div>
-          <Type />
+          <Type setTypeIndex={setTypeIndex} />
         </div>
-        <Content click={click} />
+        <Content click={click} typeIndex={typeIndex} />
       </div>
       <button id="button__map" onClick={changeContent}>
         {button}
