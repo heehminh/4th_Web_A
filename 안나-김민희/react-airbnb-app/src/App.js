@@ -9,12 +9,10 @@ const App = () => {
   // 2. host 페이지 (react-router-dom /host)
 
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="host" element={<Host />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="host" element={<Host />} />
+    </Routes>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import rooms from "../data/rooms";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,8 +12,9 @@ const initialLikeData = localStorage.getItem("newLikedRooms")
   ? JSON.parse(localStorage.getItem("newLikedRooms"))
   : [];
 
-const Article = () => {
+const Article = ({ typeIndex }) => {
   const [likedRooms, setLikedRooms] = useState(initialLikeData);
+  const [displayedRooms, setDisplayedRooms] = useState([]);
 
   const toggleLike = (index) => {
     const newLikedRooms = [...likedRooms];
@@ -22,9 +23,17 @@ const Article = () => {
     localStorage.setItem("newLikedRooms", JSON.stringify(newLikedRooms));
   };
 
+  useEffect(() => {
+    setDisplayedRooms(
+      typeIndex === 0
+        ? rooms
+        : rooms.filter((room) => room.typeIndex === typeIndex)
+    );
+  }, [typeIndex]);
+
   return (
     <article className="room">
-      {rooms.map((room, index) => {
+      {displayedRooms.map((room, index) => {
         const { img, loc, star, plus, when, price, standard } = room;
         const liked = likedRooms[index];
 
