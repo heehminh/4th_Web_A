@@ -40,7 +40,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 110px 40px 40px 40px;
+  margin: 30px;
 `;
 
 const TypeWrapper = styled.div`

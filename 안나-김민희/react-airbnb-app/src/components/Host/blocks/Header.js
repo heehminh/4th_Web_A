@@ -24,8 +24,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header>
-      <img
+    <Wrapper>
+      <Icon
         onClick={() => navigate(`../`)}
         className="header__icon"
         src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"
@@ -35,11 +35,30 @@ const Header = () => {
         {showStartButton && <StartButton />}
         <ChatButton />
       </Buttons>
-    </header>
+    </Wrapper>
   );
 };
 
 export default Header;
+
+const Wrapper = styled.header`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
+  padding: 20px 200px;
+`;
+
+const Icon = styled.img`
+  height: 30px;
+`;
 
 const Buttons = styled.div`
   display: flex;

@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Type from "../components/Type";
 import Content from "../components/Content";
 import "./Home.css";
+import styled from "styled-components";
 
 const Home = () => {
   const [click, setClick] = useState(false);
@@ -17,14 +18,14 @@ const Home = () => {
   const [typeIndex, setTypeIndex] = useState(0);
   return (
     <div className="App">
-      <div className="wrapper">
-        <div className="wrapper__header">
+      <Wrapper>
+        <WrapperHeader>
           <Header />
           <div className="line"></div>
           <Type setTypeIndex={setTypeIndex} />
-        </div>
+        </WrapperHeader>
         <Content click={click} typeIndex={typeIndex} />
-      </div>
+      </Wrapper>
       <button id="button__map" onClick={changeContent}>
         {button}
       </button>
@@ -33,3 +34,18 @@ const Home = () => {
 };
 
 export default Home;
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const WrapperHeader = styled.div`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 999;
+`;
