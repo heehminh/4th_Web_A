@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ChatButton from "../atoms/ChatButton";
@@ -6,7 +6,7 @@ import StartButton from "../atoms/StartButton";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [showStartButton, setShowStartButton] = React.useState(false);
+  const [showStartButton, setShowStartButton] = useState(false);
 
   const handleScroll = () => {
     if (window.pageYOffset >= 700) {
