@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Concert from './pages/Concert';
 import Header from './pages/Header';
 import Login from './pages/Login';
+import TodoList from './todo/TodoList';
+
 
 const App = () => {   
   return (
@@ -15,6 +17,7 @@ const App = () => {
         </Route>
       </Route>
       <Route path='login' element={<Login />} />
+      <Route path='todo' element={<TodoList/>}/>
     </Routes>
   );  
   
