@@ -81,9 +81,6 @@ html {
     display: block;
 }
 
-.active {
-    color: #00B523;
-}
 
 .Btn_login::after {
     width: 5.9rem;
@@ -93,6 +90,10 @@ html {
 .Btn_customer::after,
 .Btn_howto::after{
     width: 7.1rem;
+}
+
+:active {
+    color: #00B523;
 }
 
 .Search_wrap {
