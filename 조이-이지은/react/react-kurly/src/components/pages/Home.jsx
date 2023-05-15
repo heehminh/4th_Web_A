@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { counterState } from "../../atoms/counterAtom";
+import { useSelector, useDispatch } from "react-redux";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -33,16 +32,20 @@ import "./Home.css";
 import "../styles/styles.css";
 
 function Home() {
-  const [count, setCount] = useRecoilState(counterState);
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
+
   function handleIncrement() {
-    setCount(count + 1);
+    const result = window.confirm("장바구니에 추가하시겠습니까?");
+    if (result) {
+      dispatch({ type: "INCREMENT" });
+      alert("장바구니에 담았습니다!");
+    }
   }
 
   return (
     <div id="home-all">
       <main>
-        {/* <CountContext.Provider value={{ count, handleIncrement }}>
-          {props.children} */}
         <section className="main-1">
           <Swiper
             id="slideShow"

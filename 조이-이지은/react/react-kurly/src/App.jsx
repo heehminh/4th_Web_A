@@ -4,14 +4,15 @@ import Login from "./components/pages/Login";
 import Egg from "./components/pages/Egg";
 import Heart from "./components/pages/Heart";
 import Cart from "./components/pages/Cart";
+import store from "./redux/store";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import { RecoilRoot } from "recoil";
+import { Provider } from "react-redux";
 function App() {
   return (
-    <RecoilRoot>
+    <Provider store={store}>
       <BrowserRouter>
         <div>
           <Header />
@@ -25,7 +26,7 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
-    </RecoilRoot>
+    </Provider>
   );
 }
 

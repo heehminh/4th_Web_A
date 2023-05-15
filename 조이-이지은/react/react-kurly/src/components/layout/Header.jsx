@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { counterState } from "../../atoms/counterAtom";
-import { useRecoilState } from "recoil";
+// import { useRecoilState } from "recoil";
+import { useSelector, useDispatch } from "react-redux";
 
 import Logo from "../images/r-logo.png";
 import Heart from "../images/r-heart.png";
@@ -14,7 +15,9 @@ import "./Header.css";
 import "../styles/styles.css";
 
 const Header = () => {
-  const [count, setCount] = useRecoilState(counterState);
+  // const [count, setCount] = useRecoilState(counterState);
+  const count = useSelector((state) => state.count);
+  // const dispatch = useDispatch();
   return (
     <div id="header-all">
       <header className="header">
@@ -67,7 +70,7 @@ const Header = () => {
               <Link to={"/Cart"}>
                 <img src={Cart} width={30} rem alt="cart" />
               </Link>
-              {count}
+              <span id="cart-count">{count}</span>
             </div>
           </div>
         </section>
