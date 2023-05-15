@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import CountContext from "../contexts/CountContext";
+import { counterState } from "../../atoms/counterAtom";
+import { useRecoilState } from "recoil";
+
 import Logo from "../images/r-logo.png";
 import Heart from "../images/r-heart.png";
 import Cart from "../images/r-cart.png";
@@ -12,6 +14,7 @@ import "./Header.css";
 import "../styles/styles.css";
 
 const Header = () => {
+  const [count, setCount] = useRecoilState(counterState);
   return (
     <div id="header-all">
       <header className="header">
@@ -56,10 +59,15 @@ const Header = () => {
               <img src={Place} width={30} rem alt="place" />
             </div>
             <div>
-              <img src={Heart} width={30} rem alt="heart" />
+              <Link to={"/Heart"}>
+                <img src={Heart} width={30} rem alt="heart" />
+              </Link>
             </div>
             <div>
-              <img src={Cart} width={30} rem alt="cart" />
+              <Link to={"/Cart"}>
+                <img src={Cart} width={30} rem alt="cart" />
+              </Link>
+              {count}
             </div>
           </div>
         </section>

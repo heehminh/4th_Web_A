@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import CountContext from "../contexts/CountContext";
+import { useRecoilState } from "recoil";
+import { counterState } from "../../atoms/counterAtom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -32,7 +33,7 @@ import "./Home.css";
 import "../styles/styles.css";
 
 function Home() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useRecoilState(counterState);
   function handleIncrement() {
     setCount(count + 1);
   }
