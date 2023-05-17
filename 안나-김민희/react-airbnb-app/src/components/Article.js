@@ -6,21 +6,18 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleLike } from "../redux/likeSlice";
 
 SwiperCore.use([Navigation, Pagination]);
-const initialLikeData = localStorage.getItem("newLikedRooms")
-  ? JSON.parse(localStorage.getItem("newLikedRooms"))
-  : [];
 
 const Article = ({ typeIndex }) => {
-  const [likedRooms, setLikedRooms] = useState(initialLikeData);
+  const dispatch = useDispatch();
+  const likedRooms = useSelector((state) => state.likes);
   const [displayedRooms, setDisplayedRooms] = useState([]);
 
-  const toggleLike = (index) => {
-    const newLikedRooms = [...likedRooms];
-    newLikedRooms[index] = !newLikedRooms[index];
-    setLikedRooms(newLikedRooms);
-    localStorage.setItem("newLikedRooms", JSON.stringify(newLikedRooms));
+  const handleToggleLike = (index) => {
+    dispatch(toggleLike(index));
   };
 
   useEffect(() => {
@@ -57,12 +54,12 @@ const Article = ({ typeIndex }) => {
             {liked ? (
               <HeartFilled
                 className="room__like"
-                onClick={() => toggleLike(index)}
+                onClick={() => handleToggleLike(index)}
               />
             ) : (
               <HeartOutlined
                 className="room__unlike"
-                onClick={() => toggleLike(index)}
+                onClick={() => handleToggleLike(index)}
               />
             )}
 

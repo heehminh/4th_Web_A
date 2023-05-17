@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import Chatting from "../components/Host/blocks/Chatting";
 import FAQ from "../components/Host/blocks/FAQ";
 import Header from "../components/Host/blocks/Header";
@@ -8,14 +9,25 @@ import "./Host.css";
 
 export const Host = () => {
   return (
-    <div className="Host">
-      <div className="host__wrapper">
+    <Wrapper>
+      <HostWrapper>
         <Header />
         <Intro />
         <Start />
         <Chatting />
-      </div>
+      </HostWrapper>
       <FAQ />
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const HostWrapper = styled.div`
+  width: 1400px;
+`;

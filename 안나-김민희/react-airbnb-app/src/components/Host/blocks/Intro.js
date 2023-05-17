@@ -265,17 +265,15 @@ const Intro = () => {
   });
 
   return (
-    <div className="intro">
-      <div className="intro__description">
-        <div className="intro__title">
+    <IntroWrapper>
+      <Description>
+        <Title>
           <div className="intro__title__01">당신의 공간을</div>
           <div className="intro__title__02">에어비앤비하세요.</div>
-        </div>
-        <div className="intro__income">
-          <div className="intro__income__title">예상 수입</div>
-          <div className="intro__income__number">
-            ₩{income.toLocaleString("ko-KR")}
-          </div>
+        </Title>
+        <Income>
+          <IncomeTitle>예상 수입</IncomeTitle>
+          <IncomeNumber>₩{income.toLocaleString("ko-KR")}</IncomeNumber>
           <div className="intro__income__slider">
             <InputLabel className="intro__income__description">
               <string>
@@ -295,9 +293,9 @@ const Intro = () => {
             />
           </div>
           <div>
-            <div className="intro__income__way" onClick={handleOpenModal}>
+            <IncomeWay onClick={handleOpenModal}>
               에어비앤비가 예상 수입을 산정하는 방법
-            </div>
+            </IncomeWay>
 
             {showModal && (
               <ModalOverlay>
@@ -354,27 +352,24 @@ const Intro = () => {
             )}
           </div>
 
-          <div className="intro__search">
-            <img
-              className="intro__search__icon"
+          <Search>
+            <SearchIcon
               src="http://localhost:3000/assets/home-search.png"
               alt="search-icon"
             />
-            <div className="intro__search__info">
-              <div className="intro__search__city">{city}</div>
-              <div className="intro__search__detail">공간 전체, 게스트 4명</div>
+            <div>
+              <SearchCity>{city}</SearchCity>
+              <SearchDetail>공간 전체, 게스트 4명</SearchDetail>
             </div>
-          </div>
+          </Search>
           <StartButton />
-        </div>
-      </div>
-      <div className="intro__map">
+        </Income>
+      </Description>
+      <Map>
         <div ref={mapElement} id="intro__map"></div>
-        <div className="intro__map__button" onClick={setPosition}>
-          가까운 숙소 요금 확인하기
-        </div>
-      </div>
-    </div>
+        <MapButton onClick={setPosition}>가까운 숙소 요금 확인하기</MapButton>
+      </Map>
+    </IntroWrapper>
   );
 };
 
@@ -426,4 +421,116 @@ const ModalCloseButton = styled.button`
 
 const ModalBody = styled.div`
   padding: 1rem;
+`;
+
+const IntroWrapper = styled.div`
+  width: 100%;
+  height: 640px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 40px;
+  margin-top: 120px;
+`;
+
+const Description = styled.div`
+  width: 640px;
+  height: 100%;
+  padding: 0px 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Title = styled.div`
+  color: rgb(255, 56, 92);
+  font-size: 48px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Income = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const IncomeTitle = styled.div`
+  color: black;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+`;
+
+const IncomeNumber = styled.div`
+  color: black;
+  font-size: 72px;
+  font-weight: 700;
+`;
+
+const IncomeWay = styled.div`
+  margin-top: 20px;
+  border-bottom: 1px solid rgb(113, 113, 113);
+  font-size: 14px;
+  color: rgb(113, 113, 113);
+  cursor: pointer;
+`;
+
+const Search = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 400px;
+  height: 60px;
+  border: 1px solid lightgray;
+  border-radius: 40px;
+  padding: 12px 6px 12px 20px;
+  margin: 32px 0px;
+  cursor: pointer;
+`;
+
+const SearchIcon = styled.img`
+  height: 40px;
+  object-fit: cover;
+  margin-right: 16px;
+`;
+
+const SearchCity = styled.div`
+  font-size: 16px;
+  font-weight: 600;
+`;
+
+const SearchDetail = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(113, 113, 113);
+`;
+
+const Map = styled.div`
+  width: 640px;
+  height: 600px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MapButton = styled.div`
+  height: 45px;
+  padding: 11px 16px;
+  color: black;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 50px;
+  transform: translateY(-50%);
+  box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.2);
+  z-index: 100;
 `;
