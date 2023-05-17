@@ -13,18 +13,18 @@ const Header = () => {
     setActiveLogo('')
     };   
 
-    const logoClass = (logo) => `${logo} ${logo === activeLogo ? 'hover' : ''}`
+    const logoClass = (logo) => `${logo} ${logo == activeLogo ? '.active' : ''}`
     return (
         <header className="Header_wrap">
                 <div className="Service_wrap">
                     <span className="Small_logo"></span>
                     <div className="Service_list_wrap">
                     <ul className="Service_list">
-                        <li className = 'Btn_login'
+                        <li className = {logoClass('Btn_login')}
                             onMouseOver={handleMouseOver}
                             onMouseOut={handleMouseOut}
                         >
-                        <NavLink to="/login" style={{ textDecoration: "none"}}>로그인</NavLink>
+                        <NavLink to="/login" style={{ textDecoration: "none" }}>로그인</NavLink>
                         </li>
                         <li className={logoClass("Btn_join")}
                             onMouseOver={handleMouseOver}
