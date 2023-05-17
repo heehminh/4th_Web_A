@@ -34,6 +34,10 @@
   font-size: 3rem;
   width: 250px;
 }
+.main-2-img button {
+  border: none;
+  background-color: #fff;
+}
 .main-2-name {
   font-size: 1.1rem;
   padding: 1rem 0;

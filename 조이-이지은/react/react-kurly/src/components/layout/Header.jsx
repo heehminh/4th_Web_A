@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { counterState } from "../../atoms/counterAtom";
+// import { useRecoilState } from "recoil";
+import { useSelector, useDispatch } from "react-redux";
 
 import Logo from "../images/r-logo.png";
 import Heart from "../images/r-heart.png";
@@ -12,6 +15,9 @@ import "./Header.css";
 import "../styles/styles.css";
 
 const Header = () => {
+  // const [count, setCount] = useRecoilState(counterState);
+  const count = useSelector((state) => state.count);
+  // const dispatch = useDispatch();
   return (
     <div id="header-all">
       <header className="header">
@@ -38,6 +44,7 @@ const Header = () => {
             <img
               src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgNyA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTUuMTA4IDd2LS4wMDdMMS45MTEgMi41NzdWN0guMDQ2VjBoMS44NjdsMy4xOTYgNC40MTlWMGgxLjg2N3Y3SDUuMTA4eiIgZmlsbD0iI0ZBNjIyRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo="
               alt="market-kurly"
+              id="beauty-new"
             />
           </div>
           <div className="search">
@@ -46,30 +53,47 @@ const Header = () => {
               className="input"
               placeholder="검색어를 입력해주세요"
             />
-            <img src={Search} width={25} rem alt="search" />
+            <button id="search-btn">
+              <img src={Search} width={25} rem alt="search" />
+            </button>
           </div>
           <div id="heart-icon">
             <div>
               <img src={Place} width={30} rem alt="place" />
             </div>
             <div>
-              <img src={Heart} width={30} rem alt="heart" />
+              <Link to={"/Heart"}>
+                <img src={Heart} width={30} rem alt="heart" />
+              </Link>
             </div>
             <div>
-              <img src={Cart} width={30} rem alt="cart" />
+              <Link to={"/Cart"}>
+                <img src={Cart} width={30} rem alt="cart" />
+              </Link>
+              <span id="cart-count">{count}</span>
             </div>
           </div>
         </section>
         <section className="header-3">
           <ul className="header-list">
-            <li className="header-lists">
-              <img src={List} width={20} rem alt="list" />
-              카테고리
+            <li className="kategorie">
+              <span>
+                <img src={List} width={30} rem alt="list" />
+                카테고리
+              </span>
             </li>
-            <li className="header-lists">신상품</li>
-            <li className="header-lists">베스트</li>
-            <li className="header-lists">알뜰쇼핑</li>
-            <li className="header-lists">특가/혜택</li>
+            <li className="header-lists">
+              <span>신상품</span>
+            </li>
+            <li className="header-lists">
+              <span>베스트</span>
+            </li>
+            <li className="header-lists">
+              <span>알뜰쇼핑</span>
+            </li>
+            <li className="header-lists">
+              <span>특가/혜택</span>
+            </li>
             <li>
               <button id="header-lists-btn">
                 <span className="highlight">샛별 · 택배</span> 배송안내
