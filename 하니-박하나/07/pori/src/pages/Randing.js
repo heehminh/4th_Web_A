@@ -4,6 +4,7 @@ import axios from "axios";
 import panda from "../assets/판다포리.png";
 import sad from "../assets/무기력포리.png";
 import angry from "../assets/화난포리.png";
+import main from "../assets/뒤뚱포리.png"
 
 const RandingDiv = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const RandingDiv = styled.div`
 
 const Title = styled.h1`
   color: black;
-  margin-top: 10vh;
+  margin-top: 5vh;
 `;
 
 const SubTitle = styled.span``;
@@ -38,7 +39,21 @@ const Result = styled.div`
 `;
 
 const Image = styled.img`
-  height: 30vw;
+  height: 30vh;
+`;
+
+const MainImage = styled.img`
+    width: 20vw;
+    animation: flipImage 2s infinite alternate;
+
+    @keyframes flipImage {
+        0% {
+            transform: scaleX(1);
+        }
+        100% {
+            transform: scaleX(-1);
+        }
+    }
 `;
 
 const Randing = () => {
@@ -65,6 +80,7 @@ const Randing = () => {
 
   return (
     <RandingDiv>
+        <MainImage src={main} alt="포리는 산책하고 싶어"/>
       <Title>포리는 산책하고 싶어!</Title>
       <SubTitle>포리 표정으로 보는 미세먼지 농도</SubTitle>
       <Form>
