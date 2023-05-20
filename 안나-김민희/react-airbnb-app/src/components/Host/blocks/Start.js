@@ -36,8 +36,10 @@ const Start = () => {
           </DText>
         </Des>
       </Description>
-      <Ready>호스팅을 시작할 준비가 되셨나요?</Ready>
-      <StartButton />
+      <Ready>
+        <RText>호스팅을 시작할 준비가 되셨나요?</RText>
+        <StartButton />
+      </Ready>
     </Wrapper>
   );
 };
@@ -49,16 +51,31 @@ const Wrapper = styled.div`
   flex-direction: column;
   margin: 120px;
   align-items: center;
+
+  @media screen and (max-width: 1400px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const Title = styled.div`
   font-size: 48px;
   font-weight: 600;
   margin: 0px 40px 40px 40px;
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+    text-align: start;
+    font-size: 36px;
+    padding-left: 160px;
+  }
 `;
 
 const Img = styled.img`
   width: 100%;
+
+  @media screen and (max-width: 1400px) {
+    width: calc((100% - 300px));
+  }
 `;
 
 const Description = styled.div`
@@ -67,6 +84,11 @@ const Description = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 40px;
+
+  @media screen and (max-width: 1400px) {
+    flex-direction: column;
+    width: calc((100% - 300px));
+  }
 `;
 
 const Des = styled.div`
@@ -74,6 +96,11 @@ const Des = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0px 20px;
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 `;
 
 const DTitle = styled.div`
@@ -93,5 +120,12 @@ const Ready = styled.div`
   font-size: 22px;
   font-weight: 600;
   margin-top: 64px;
+
+  @media screen and (max-width: 1400px) {
+    display: none;
+  }
+`;
+
+const RText = styled.div`
   margin-bottom: 24px;
 `;

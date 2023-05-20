@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ChatButton from "../atoms/ChatButton";
@@ -9,14 +9,14 @@ const Header = () => {
   const [showStartButton, setShowStartButton] = useState(false);
 
   const handleScroll = () => {
-    if (window.pageYOffset >= 700) {
+    if (window.pageYOffset >= 700 || window.innerWidth < 1400) {
       setShowStartButton(true);
     } else {
       setShowStartButton(false);
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -32,7 +32,7 @@ const Header = () => {
         alt="icon"
       />
       <Buttons>
-        {showStartButton && <StartButton />}
+        {showStartButton && <StartButton showStartButton={showStartButton} />}
         <ChatButton />
       </Buttons>
     </Wrapper>
@@ -54,6 +54,10 @@ const Wrapper = styled.header`
   z-index: 999;
   background-color: white;
   padding: 20px 200px;
+
+  @media screen and (max-width: 1400px) {
+    padding: 20px;
+  }
 `;
 
 const Icon = styled.img`

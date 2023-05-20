@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const StartButton = () => {
-  return (
+const StartButton = ({ showStartButton }) => {
+  return showStartButton ? (
     <Start>
       <Button>
         <Icon>☖</Icon>
         <div>에어비앤비 스타트</div>
       </Button>
     </Start>
+  ) : (
+    <></>
   );
 };
 

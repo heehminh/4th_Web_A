@@ -266,105 +266,110 @@ const Intro = () => {
 
   return (
     <IntroWrapper>
-      <Description>
-        <Title>
-          <div className="intro__title__01">당신의 공간을</div>
-          <div className="intro__title__02">에어비앤비하세요.</div>
-        </Title>
-        <Income>
-          <IncomeTitle>예상 수입</IncomeTitle>
-          <IncomeNumber>₩{income.toLocaleString("ko-KR")}</IncomeNumber>
-          <div className="intro__income__slider">
-            <InputLabel className="intro__income__description">
-              <string>
-                <u>{day}</u>
-              </string>
-              박에 대한 예상 수입(1박 요금이 ₩77,153일 경우)
-            </InputLabel>
-            <Slider
-              className="slider"
-              defaultValue={day}
-              onChange={handleSliderChange}
-              aria-label="Default"
-              min={1}
-              max={30}
-              valueLabelFormat={(value) => `${value}박`}
-              valueLabelDisplay="auto"
-            />
-          </div>
-          <div>
-            <IncomeWay onClick={handleOpenModal}>
-              에어비앤비가 예상 수입을 산정하는 방법
-            </IncomeWay>
-
-            {showModal && (
-              <ModalOverlay>
-                <ModalWrapper ref={modalRef}>
-                  <ModalHeader>
-                    <ModalCloseButton onClick={handleCloseModal}>
-                      X
-                    </ModalCloseButton>
-                  </ModalHeader>
-                  <ModalBody>
-                    <Wrapper>
-                      <h1>
-                        에어비앤비가 예상 수입을
-                        <br />
-                        산정하는 방법
-                      </h1>
-                      <div>
-                        에어비앤비는 비슷한 에어비앤비 숙소의 지난 12개월간 예약
-                        데이터를 검토하여 예상 수입을 계산합니다. 비슷한 숙소는
-                        숙소에 대해 알려주신 정보를 바탕으로 선정됩니다. 숙소
-                        주소를 입력하면 가까운 거리에 있는 숙소들을 기준으로 더
-                        구체적인 예상 요금을 확인하실 수 있습니다. 지역을
-                        입력하면 해당 지역 내 비슷한 숙소 중 수입 기준 상위 50%
-                        숙소를 기준으로 한 예상 수입이 표시됩니다. <br />
-                        <br />
-                        에어비앤비는 비슷한 숙소를 기준으로 평균 1박 수입을
-                        예상한 후 여기에 호스트가 호스팅할 예정이라고 표시한
-                        숙박 일수를 곱합니다. 또한, 그달에 모든 에어비앤비
-                        숙소가 매일 예약 가능하다는 가정하에 해당 지역의 한 달
-                        평균 예약 일수를 안내해드립니다. (1박당 호스팅 수입은 각
-                        호스트가 정한 요금에서{" "}
-                        <u>
-                          <strong>에어비앤비 호스트 서비스 수수료</strong>
-                        </u>
-                        를 제외한 금액으로, 세금 또는 호스팅 비용은 공제되지
-                        않습니다.)
-                        <br />
-                        <br />
-                        실제 수입은 숙소의 예약 가능일과 요금, 해당 지역 내 수요
-                        등 여러 요인에 따라 달라질 수 있습니다. 또한, 현지
-                        법규에 따라 호스팅 가능 여부 및 요건이 변경될 수
-                        있습니다.{" "}
-                        <u>
-                          <strong>책임감 있는 호스팅</strong>
-                        </u>
-                        에 관해 자세히 알아보세요. <br />
-                        <br />
-                        예상 수입은 숙소 가치를 평가하거나 추정한 것이 아닙니다.
-                      </div>
-                    </Wrapper>
-                  </ModalBody>
-                </ModalWrapper>
-              </ModalOverlay>
-            )}
-          </div>
-
-          <Search>
-            <SearchIcon
-              src="http://localhost:3000/assets/home-search.png"
-              alt="search-icon"
-            />
-            <div>
-              <SearchCity>{city}</SearchCity>
-              <SearchDetail>공간 전체, 게스트 4명</SearchDetail>
+      <Left>
+        <Description>
+          <Title>
+            <Text>당신의 공간을</Text>
+            <Text>에어비앤비하세요.</Text>
+          </Title>
+          <Income>
+            <IncomeTitle>예상 수입</IncomeTitle>
+            <IncomeNumber>₩{income.toLocaleString("ko-KR")}</IncomeNumber>
+            <div className="intro__income__slider">
+              <InputLabel className="intro__income__description">
+                <string>
+                  <u>{day}</u>
+                </string>
+                박에 대한 예상 수입(1박 요금이 ₩77,153일 경우)
+              </InputLabel>
+              <Slider
+                className="slider"
+                defaultValue={day}
+                onChange={handleSliderChange}
+                aria-label="Default"
+                min={1}
+                max={30}
+                valueLabelFormat={(value) => `${value}박`}
+                valueLabelDisplay="auto"
+              />
             </div>
-          </Search>
-          <StartButton />
-        </Income>
-      </Description>
+            <div>
+              <IncomeWay onClick={handleOpenModal}>
+                에어비앤비가 예상 수입을 산정하는 방법
+              </IncomeWay>
+
+              {showModal && (
+                <ModalOverlay>
+                  <ModalWrapper ref={modalRef}>
+                    <ModalHeader>
+                      <ModalCloseButton onClick={handleCloseModal}>
+                        X
+                      </ModalCloseButton>
+                    </ModalHeader>
+                    <ModalBody>
+                      <Wrapper>
+                        <h1>
+                          에어비앤비가 예상 수입을
+                          <br />
+                          산정하는 방법
+                        </h1>
+                        <div>
+                          에어비앤비는 비슷한 에어비앤비 숙소의 지난 12개월간
+                          예약 데이터를 검토하여 예상 수입을 계산합니다. 비슷한
+                          숙소는 숙소에 대해 알려주신 정보를 바탕으로
+                          선정됩니다. 숙소 주소를 입력하면 가까운 거리에 있는
+                          숙소들을 기준으로 더 구체적인 예상 요금을 확인하실 수
+                          있습니다. 지역을 입력하면 해당 지역 내 비슷한 숙소 중
+                          수입 기준 상위 50% 숙소를 기준으로 한 예상 수입이
+                          표시됩니다. <br />
+                          <br />
+                          에어비앤비는 비슷한 숙소를 기준으로 평균 1박 수입을
+                          예상한 후 여기에 호스트가 호스팅할 예정이라고 표시한
+                          숙박 일수를 곱합니다. 또한, 그달에 모든 에어비앤비
+                          숙소가 매일 예약 가능하다는 가정하에 해당 지역의 한 달
+                          평균 예약 일수를 안내해드립니다. (1박당 호스팅 수입은
+                          각 호스트가 정한 요금에서{" "}
+                          <u>
+                            <strong>에어비앤비 호스트 서비스 수수료</strong>
+                          </u>
+                          를 제외한 금액으로, 세금 또는 호스팅 비용은 공제되지
+                          않습니다.)
+                          <br />
+                          <br />
+                          실제 수입은 숙소의 예약 가능일과 요금, 해당 지역 내
+                          수요 등 여러 요인에 따라 달라질 수 있습니다. 또한,
+                          현지 법규에 따라 호스팅 가능 여부 및 요건이 변경될 수
+                          있습니다.{" "}
+                          <u>
+                            <strong>책임감 있는 호스팅</strong>
+                          </u>
+                          에 관해 자세히 알아보세요. <br />
+                          <br />
+                          예상 수입은 숙소 가치를 평가하거나 추정한 것이
+                          아닙니다.
+                        </div>
+                      </Wrapper>
+                    </ModalBody>
+                  </ModalWrapper>
+                </ModalOverlay>
+              )}
+            </div>
+
+            <Search>
+              <SearchIcon
+                src="http://localhost:3000/assets/home-search.png"
+                alt="search-icon"
+              />
+              <div>
+                <SearchCity>{city}</SearchCity>
+                <SearchDetail>공간 전체, 게스트 4명</SearchDetail>
+              </div>
+            </Search>
+            <StartButton />
+          </Income>
+        </Description>
+      </Left>
+
       <Map>
         <div ref={mapElement} id="intro__map"></div>
         <MapButton onClick={setPosition}>가까운 숙소 요금 확인하기</MapButton>
@@ -425,15 +430,24 @@ const ModalBody = styled.div`
 
 const IntroWrapper = styled.div`
   width: 100%;
-  height: 640px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px 40px;
   margin-top: 120px;
+
+  @media screen and (max-width: 1400px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+  }
 `;
 
+const Left = styled.div``;
+
 const Description = styled.div`
+  width: 100%;
   width: 640px;
   height: 100%;
   padding: 0px 75px;
@@ -441,6 +455,10 @@ const Description = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
 `;
 
 const Title = styled.div`
@@ -450,12 +468,24 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 1400px) {
+    flex-direction: row;
+  }
+`;
+
+const Text = styled.div`
+  margin: 0px 3px;
 `;
 
 const Income = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
 `;
 
 const IncomeTitle = styled.div`
@@ -491,6 +521,10 @@ const Search = styled.div`
   padding: 12px 6px 12px 20px;
   margin: 32px 0px;
   cursor: pointer;
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
 `;
 
 const SearchIcon = styled.img`

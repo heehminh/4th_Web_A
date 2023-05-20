@@ -82,17 +82,30 @@ const Wrapper = styled.div`
   width: 100%;
   background-color: rgb(247, 247, 247);
   padding: 48px 200px;
+
+  @media screen and (max-width: 1400px) {
+    flex-direction: column;
+    padding: 32px 20px;
+  }
 `;
 
 const FAQLeft = styled.div`
   width: 50%;
   font-size: 40px;
   font-weight: 600;
-  padding: 32px 0px;
+  padding: 32px 32px;
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
 `;
 
 const Questions = styled.div`
   width: 50%;
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
 `;
 
 const Accordion = styled.div`
