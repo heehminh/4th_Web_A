@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
+import MemberModal from "../atoms/MemberModal";
+import NonMemberModal from "../atoms/NonMemberModal";
+import { useRecoilState } from "recoil";
+import { loginAtom } from "../../../recoil/atom";
 
 const Header = () => {
+  const [isLogin, setIsLogin] = useRecoilState(loginAtom);
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const modalRef = useRef();
+  useOnClickOutside(modalRef, () => {
+    setShowModal(false);
+  });
+
   return (
     <Wrapper>
       <Logo>
@@ -11,6 +28,7 @@ const Header = () => {
           alt="header-logo"
           id="header__logo-image"
           src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"
+          onClick={() => navigate(`../`)}
         />
       </Logo>
       <SearchBar>
@@ -32,7 +50,7 @@ const Header = () => {
         <SettingIcon>
           <SettingIconImg alt="setting" src="../assets/home-setting.png" />
         </SettingIcon>
-        <SettingProfile>
+        <SettingProfile onClick={handleOpenModal}>
           <div>
             <img
               alt="profile list"
@@ -48,6 +66,11 @@ const Header = () => {
             />
           </div>
         </SettingProfile>
+        {showModal && (
+          <HeaderModalWrapper ref={modalRef}>
+            {isLogin ? <MemberModal /> : <NonMemberModal />}
+          </HeaderModalWrapper>
+        )}
       </Setting>
     </Wrapper>
   );
@@ -132,4 +155,18 @@ const SettingProfile = styled.div`
   border-radius: 20px;
   border: 1px solid lightgray;
   padding: 0px 10px;
+  position: relative;
+
+  &:hover {
+    border-radius: 35px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+`;
+
+const HeaderModalWrapper = styled.div`
+  position: absolute;
+  top: 80px;
+  left: calc((100% - 290px));
+  width: 100%;
+  z-index: 1;
 `;

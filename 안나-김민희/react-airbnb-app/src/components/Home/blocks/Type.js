@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import types from "../data/types";
+import types from "../../../data/types";
 
 const Type = ({ setTypeIndex }) => {
   const [activeTypeItemId, setActiveTypeItemId] = useState(null);
@@ -39,8 +39,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  margin: 30px;
+  justify-content: flex-start;
+  margin: 85px 30px 0px 30px;
+  padding: 30px 0px 10px 0px;
+  top: 0;
+  background-color: white;
 `;
 
 const TypeWrapper = styled.div`
