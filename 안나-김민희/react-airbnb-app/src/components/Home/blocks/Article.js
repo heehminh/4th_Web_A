@@ -9,7 +9,7 @@ import "swiper/scss/pagination";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleLike } from "../../../redux/likeSlice";
 import { loginAtom } from "../../../recoil/atom";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import LoginModal from "../atoms/LoginModal";
 import styled from "styled-components";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
@@ -20,7 +20,7 @@ const Article = ({ typeIndex }) => {
   const dispatch = useDispatch();
   const likedRooms = useSelector((state) => state.likes);
   const [displayedRooms, setDisplayedRooms] = useState([]);
-  const [isLogin, setIsLogin] = useRecoilState(loginAtom);
+  const isLogin = useRecoilValue(loginAtom);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 

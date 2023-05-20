@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { nameAtom, emailAtom } from "../recoil/atom";
 import AccountButton from "../components/Home/atoms/AccountButton";
 
 export const Account = () => {
-  const [name, setName] = useRecoilState(nameAtom);
-  const [email, setEmail] = useRecoilState(emailAtom);
+  const name = useRecoilValue(nameAtom);
+  const email = useRecoilValue(emailAtom);
 
   return (
     <App>

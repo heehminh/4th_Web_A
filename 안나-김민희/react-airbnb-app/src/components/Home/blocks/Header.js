@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 import MemberModal from "../atoms/MemberModal";
 import NonMemberModal from "../atoms/NonMemberModal";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { loginAtom } from "../../../recoil/atom";
 
 const Header = () => {
-  const [isLogin, setIsLogin] = useRecoilState(loginAtom);
+  const isLogin = useRecoilValue(loginAtom);
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 

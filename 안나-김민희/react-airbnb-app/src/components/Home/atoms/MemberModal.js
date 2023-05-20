@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { loginAtom, nameAtom, emailAtom } from "../../../recoil/atom";
 
 const MemberModal = () => {
-  const [isLogin, setIsLogin] = useRecoilState(loginAtom);
-  const [name, setName] = useRecoilState(nameAtom);
-  const [email, setEmail] = useRecoilState(emailAtom);
+  const setIsLogin = useSetRecoilState(loginAtom);
+  const setName = useSetRecoilState(nameAtom);
+  const setEmail = useSetRecoilState(emailAtom);
 
   const navigate = useNavigate();
 

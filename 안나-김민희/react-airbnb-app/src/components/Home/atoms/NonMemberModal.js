@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { loginAtom } from "../../../recoil/atom";
 import LoginModal from "./LoginModal";
 
@@ -12,7 +12,7 @@ const NonMemberModal = () => {
 
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
-  const [isLogin, setIsLogin] = useRecoilState(loginAtom);
+  const isLogin = useRecoilValue(loginAtom);
 
   const handleOpenModal = () => {
     setShowModal(true);
