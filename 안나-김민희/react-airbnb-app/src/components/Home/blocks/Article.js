@@ -1,44 +1,64 @@
 import React, { useState, useEffect, useRef } from "react";
-import rooms from "../../../data/rooms";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleLike } from "../../../redux/likeSlice";
 import { loginAtom } from "../../../recoil/atom";
 import { useRecoilValue } from "recoil";
 import LoginModal from "../atoms/LoginModal";
 import styled from "styled-components";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
+import axios from "axios";
 
 SwiperCore.use([Navigation, Pagination]);
 
 const Article = ({ typeIndex }) => {
-  const dispatch = useDispatch();
-  const likedRooms = useSelector((state) => state.likes);
   const [displayedRooms, setDisplayedRooms] = useState([]);
   const isLogin = useRecoilValue(loginAtom);
+  const [roomList, setRoomList] = useState([]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleToggleLike = (index) => {
+  const toggleLike = async (id) => {
     if (!isLogin) {
       setIsModalOpen(true);
     } else {
-      dispatch(toggleLike(index));
+      try {
+        const updatedRoomList = roomList.map((room) => {
+          if (room.id === id) {
+            return { ...room, like: !room.like };
+          }
+          return room;
+        });
+
+        await axios.patch(`/roomList/${id}`, {
+          like: !roomList[id].like,
+        });
+        setRoomList(updatedRoomList);
+        console.log("Like toggled successfully");
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
   useEffect(() => {
-    setDisplayedRooms(
+    axios
+      .get("/roomList")
+      .then((res) => setRoomList(res.data))
+      .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    const filteredRooms =
       typeIndex === 0
-        ? rooms
-        : rooms.filter((room) => room.typeIndex === typeIndex)
-    );
-  }, [typeIndex]);
+        ? roomList
+        : roomList.filter((room) => room.typeIndex === typeIndex);
+
+    setDisplayedRooms(filteredRooms);
+  }, [typeIndex, roomList]);
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -51,53 +71,61 @@ const Article = ({ typeIndex }) => {
 
   return (
     <article className="room">
-      {displayedRooms.map((room, index) => {
-        const { img, loc, star, plus, when, price, standard } = room;
-        const liked = isLogin ? likedRooms[index] : false;
+      {roomList && roomList.length > 0 ? (
+        displayedRooms.map((room) => {
+          const { id, like, img, loc, star, plus, when, price, standard } =
+            room;
 
-        return (
-          <div className="room__item" key={index}>
-            <Swiper
-              className="room__item__imgBox"
-              spaceBetween={50}
-              slidesPerView={1}
-              navigation
-              pagination={{ clickable: true }}
-              loop
-            >
-              {img.map((src, index) => (
-                <SwiperSlide key={index}>
-                  <img className="imgBox" src={src} alt="imgBox" />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          return (
+            <div className="room__item" key={id}>
+              <Swiper
+                className="room__item__imgBox"
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                loop
+              >
+                {img && img.length > 0 ? (
+                  img.map((src, index) => (
+                    <SwiperSlide key={index}>
+                      <img className="imgBox" src={src} alt="imgBox" />
+                    </SwiperSlide>
+                  ))
+                ) : (
+                  <div>No images</div>
+                )}
+              </Swiper>
 
-            {liked ? (
-              <HeartFilled
-                className="room__like"
-                onClick={() => handleToggleLike(index)}
-              />
-            ) : (
-              <HeartOutlined
-                className="room__unlike"
-                onClick={() => handleToggleLike(index)}
-              />
-            )}
+              {!like || !isLogin ? (
+                <HeartOutlined
+                  className="room__unlike"
+                  onClick={() => toggleLike(id)}
+                />
+              ) : (
+                <HeartFilled
+                  className="room__like"
+                  onClick={() => toggleLike(id)}
+                />
+              )}
 
-            <div className="room__item__textBox">
-              <div className="textBox__1">
-                <div className="textBox__1__loc">{loc}</div>
-                <div className="textBox__1__star">★ {star}</div>
-              </div>
-              <div className="textBox__2">{plus}</div>
-              <div className="textBox__2">{when}</div>
-              <div className="textBox__3">
-                ₩{price.toLocaleString("ko-KR")} /{standard}
+              <div className="room__item__textBox">
+                <div className="textBox__1">
+                  <div className="textBox__1__loc">{loc}</div>
+                  <div className="textBox__1__star">★ {star}</div>
+                </div>
+                <div className="textBox__2">{plus}</div>
+                <div className="textBox__2">{when}</div>
+                <div className="textBox__3">
+                  ₩{price?.toLocaleString("ko-KR") ?? "loading..."} / {standard}
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })
+      ) : (
+        <div>Loading...</div>
+      )}
       {!isLogin && isModalOpen && (
         <ModalOverlay>
           <ModalWrapper ref={modalRef}>

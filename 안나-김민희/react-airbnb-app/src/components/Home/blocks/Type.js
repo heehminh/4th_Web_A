@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import types from "../../../data/types";
+import axios from "axios";
 
 const Type = ({ setTypeIndex }) => {
   const [activeTypeItemId, setActiveTypeItemId] = useState(null);
+  const [typeList, setTypeList] = useState([]);
 
   const handleTypeItemClick = (typeIdx) => {
     setActiveTypeItemId(typeIdx);
     setTypeIndex(typeIdx);
   };
 
+  useEffect(() => {
+    axios
+      .get("/typeList")
+      .then((res) => setTypeList(res.data))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <Wrapper>
       <TypeWrapper>
-        {types.map((type, index) => (
+        {typeList.map((type, index) => (
           <TypeItem
             key={index}
             className={activeTypeItemId === type.type_idx ? "active" : ""}
