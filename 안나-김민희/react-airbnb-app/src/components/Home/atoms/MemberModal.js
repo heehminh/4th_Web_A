@@ -20,15 +20,16 @@ const MemberModal = () => {
 
   return (
     <Wrapper>
-      <BlackText>
+      <Text black>
         2023년 여름 업그레이드 <New>새소식</New>
-      </BlackText>
+      </Text>
+
       <Line></Line>
 
-      <BlackText>메시지</BlackText>
-      <BlackText>알림</BlackText>
-      <BlackText>여행</BlackText>
-      <BlackText>위시리스트</BlackText>
+      <Text black>메시지</Text>
+      <Text black>알림</Text>
+      <Text black>여행</Text>
+      <Text black>위시리스트</Text>
       <Line></Line>
 
       <Text>숙소 관리</Text>
@@ -54,6 +55,20 @@ const Wrapper = styled.div`
   align-items: flex-start;
   box-shadow: 2px 2px 10px 2px gray;
 `;
+const Text = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
+  color: ${(props) => (props.black ? "black" : "gray")};
+  font-weight: 500;
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lightgray;
+  }
+`;
 
 const New = styled.div`
   font-size: 14px;
@@ -62,35 +77,6 @@ const New = styled.div`
   background-color: rgb(255, 56, 92);
   padding: 0px 3px;
   margin-left: 5px;
-`;
-
-const BlackText = styled.div`
-  width: 100%;
-  font-size: 16px;
-  color: black;
-  font-weight: 500;
-  padding: 10px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  &:hover {
-    background-color: lightgray;
-  }
-`;
-
-const Text = styled.div`
-  width: 100%;
-  font-size: 16px;
-  color: gray;
-  font-weight: 500;
-  padding: 10px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: lightgray;
-  }
 `;
 
 const Line = styled.div`
