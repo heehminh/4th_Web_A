@@ -1,25 +1,38 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import Article from "./Article";
 import Footer from "./Footer";
 import Map from "./Map";
 
 const Content = ({ click, typeIndex }) => {
+  const [markers, setMarkers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/markers");
+        setMarkers(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   if (click) {
     // Map
-    console.log("map");
     return (
       <div>
         <div id="content">
-          <Map />
+          <Map markers={markers} />
         </div>
       </div>
     );
   } else {
-    console.log("room");
     return (
       <div>
         <div id="content">
-          <Article className="room" typeIndex={typeIndex} />
+          <Article className="room" click={click} typeIndex={typeIndex} />
           <Footer id="footer" />
         </div>
       </div>

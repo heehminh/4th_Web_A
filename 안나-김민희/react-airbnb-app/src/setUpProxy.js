@@ -4,8 +4,8 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 module.exports = function (app) {
   app.use(
     "/typeList",
-    createProxyMiddleware({
-      target: "http://localhost:3002",
+    createProxyMiddleware("/typeList", {
+      target: "http://localhost:3003",
       changeOrigin: true,
     })
   );
@@ -13,6 +13,14 @@ module.exports = function (app) {
   app.use(
     "/roomList",
     createProxyMiddleware("/roomList", {
+      target: "http://localhost:3003",
+      changeOrigin: true,
+    })
+  );
+
+  app.use(
+    "/markers",
+    createProxyMiddleware("/markers", {
       target: "http://localhost:3003",
       changeOrigin: true,
     })

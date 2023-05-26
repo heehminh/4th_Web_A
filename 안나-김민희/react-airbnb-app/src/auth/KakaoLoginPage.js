@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import KakaoLogin from "react-kakao-login";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { nameAtom, emailAtom } from "../recoil/atom";
 import { loginAtom } from "../recoil/atom";
 
 const KakaoLoginPage = () => {
   const [name, setName] = useRecoilState(nameAtom);
   const [email, setEmail] = useRecoilState(emailAtom);
-  const setIsLogin = useSetRecoilState(loginAtom);
+  const [isLogin, setIsLogin] = useRecoilState(loginAtom);
 
   // 프론트만으로 구현 (카카오 Javascript key 사용)
   const kakaoClientId = process.env.REACT_APP_KAKAO_LOGIN_KEY;
@@ -22,9 +22,11 @@ const KakaoLoginPage = () => {
     setName(data.profile.properties.nickname);
     setEmail(data.profile.kakao_account.email);
 
-    console.log(name, email);
-
     setIsLogin(true);
+
+    localStorage.setItem("loginAtom", isLogin);
+    localStorage.setItem("nameAtom", name);
+    localStorage.setItem("emailAtom", email);
   };
 
   const kakaoOnFailrue = (error) => {

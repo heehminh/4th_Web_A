@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
@@ -33,9 +33,9 @@ const HomeWrapper = () => {
 };
 
 const HomeAccount = () => {
-  const [isLogin, setIsLogin] = useRecoilState(loginAtom);
+  const [login, setLogin] = useRecoilState(loginAtom);
 
-  return isLogin ? (
+  return login ? (
     <div>
       <Home />
       <Account />

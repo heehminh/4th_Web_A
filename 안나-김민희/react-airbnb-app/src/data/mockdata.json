@@ -1,4 +1,386 @@
 {
+  "typeList": [
+    {
+      "type_idx": 1,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망"
+    },
+    {
+      "type_idx": 2,
+      "type_imgSrc": "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
+      "type_description": "한적한 시골"
+    },
+    {
+      "type_idx": 3,
+      "type_imgSrc": "https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg",
+      "type_description": "돔하우스"
+    },
+    {
+      "type_idx": 4,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망1"
+    },
+    {
+      "type_idx": 5,
+      "type_imgSrc": "https://a0.muscache.com/pictures/5ed8f7c7-2e1f-43a8-9a39-4edfc81a3325.jpg",
+      "type_description": "B&B"
+    },
+    {
+      "type_idx": 6,
+      "type_imgSrc": "https://a0.muscache.com/pictures/eb7ba4c0-ea38-4cbb-9db6-bdcc8baad585.jpg",
+      "type_description": "개인실"
+    },
+    {
+      "type_idx": 7,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3726d94b-534a-42b8-bca0-a0304d912260.jpg",
+      "type_description": "인기 급상승"
+    },
+    {
+      "type_idx": 8,
+      "type_imgSrc": "https://a0.muscache.com/pictures/51f5cf64-5821-400c-8033-8a10c7787d69.jpg",
+      "type_description": "한옥"
+    },
+    {
+      "type_idx": 9,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망"
+    },
+    {
+      "type_idx": 10,
+      "type_imgSrc": "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
+      "type_description": "한적한 시골"
+    },
+    {
+      "type_idx": 11,
+      "type_imgSrc": "https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg",
+      "type_description": "돔하우스"
+    },
+    {
+      "type_idx": 12,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망1"
+    },
+    {
+      "type_idx": 13,
+      "type_imgSrc": "https://a0.muscache.com/pictures/5ed8f7c7-2e1f-43a8-9a39-4edfc81a3325.jpg",
+      "type_description": "B&B"
+    },
+    {
+      "type_idx": 14,
+      "type_imgSrc": "https://a0.muscache.com/pictures/eb7ba4c0-ea38-4cbb-9db6-bdcc8baad585.jpg",
+      "type_description": "개인실"
+    },
+    {
+      "type_idx": 15,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3726d94b-534a-42b8-bca0-a0304d912260.jpg",
+      "type_description": "인기 급상승"
+    },
+    {
+      "type_idx": 16,
+      "type_imgSrc": "https://a0.muscache.com/pictures/51f5cf64-5821-400c-8033-8a10c7787d69.jpg",
+      "type_description": "한옥"
+    },
+    {
+      "type_idx": 17,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망"
+    },
+    {
+      "type_idx": 18,
+      "type_imgSrc": "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
+      "type_description": "한적한 시골"
+    },
+    {
+      "type_idx": 19,
+      "type_imgSrc": "https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg",
+      "type_description": "돔하우스"
+    },
+    {
+      "type_idx": 20,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망1"
+    },
+    {
+      "type_idx": 21,
+      "type_imgSrc": "https://a0.muscache.com/pictures/5ed8f7c7-2e1f-43a8-9a39-4edfc81a3325.jpg",
+      "type_description": "B&B"
+    },
+    {
+      "type_idx": 22,
+      "type_imgSrc": "https://a0.muscache.com/pictures/eb7ba4c0-ea38-4cbb-9db6-bdcc8baad585.jpg",
+      "type_description": "개인실"
+    },
+    {
+      "type_idx": 23,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3726d94b-534a-42b8-bca0-a0304d912260.jpg",
+      "type_description": "인기 급상승"
+    },
+    {
+      "type_idx": 24,
+      "type_imgSrc": "https://a0.muscache.com/pictures/51f5cf64-5821-400c-8033-8a10c7787d69.jpg",
+      "type_description": "한옥"
+    },
+    {
+      "type_idx": 25,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망"
+    },
+    {
+      "type_idx": 26,
+      "type_imgSrc": "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
+      "type_description": "한적한 시골"
+    },
+    {
+      "type_idx": 27,
+      "type_imgSrc": "https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg",
+      "type_description": "돔하우스"
+    },
+    {
+      "type_idx": 28,
+      "type_imgSrc": "https://a0.muscache.com/pictures/51f5cf64-5821-400c-8033-8a10c7787d69.jpg",
+      "type_description": "한옥"
+    },
+    {
+      "type_idx": 29,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망"
+    },
+    {
+      "type_idx": 30,
+      "type_imgSrc": "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
+      "type_description": "한적한 시골"
+    },
+    {
+      "type_idx": 31,
+      "type_imgSrc": "https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg",
+      "type_description": "돔하우스"
+    },
+    {
+      "type_idx": 32,
+      "type_imgSrc": "https://a0.muscache.com/pictures/51f5cf64-5821-400c-8033-8a10c7787d69.jpg",
+      "type_description": "한옥"
+    },
+    {
+      "type_idx": 33,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망"
+    },
+    {
+      "type_idx": 34,
+      "type_imgSrc": "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
+      "type_description": "한적한 시골"
+    },
+    {
+      "type_idx": 35,
+      "type_imgSrc": "https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg",
+      "type_description": "돔하우스"
+    },
+    {
+      "type_idx": 36,
+      "type_imgSrc": "https://a0.muscache.com/pictures/51f5cf64-5821-400c-8033-8a10c7787d69.jpg",
+      "type_description": "한옥"
+    },
+    {
+      "type_idx": 37,
+      "type_imgSrc": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
+      "type_description": "최고의 전망"
+    },
+    {
+      "type_idx": 38,
+      "type_imgSrc": "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
+      "type_description": "한적한 시골"
+    },
+    {
+      "type_idx": 39,
+      "type_imgSrc": "https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg",
+      "type_description": "돔하우스"
+    }
+  ],
+
+  "markers": [
+    {
+      "id": 1,
+      "label": 290773,
+      "lat": 57.5115,
+      "lng": 97.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 2,
+      "label": 313888,
+      "lat": 27.5115,
+      "lng": 127.056,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 3,
+      "label": 15547,
+      "lat": 17.5115,
+      "lng": 127.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 4,
+      "label": 23547,
+      "lat": 23.5115,
+      "lng": 134.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+
+    {
+      "id": 5,
+      "label": 838426,
+      "lat": 13.5115,
+      "lng": 124.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 6,
+      "label": 1111547,
+      "lat": 31.5115,
+      "lng": 31.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 7,
+      "label": 18552347,
+      "lat": 21.5115,
+      "lng": 124.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 8,
+      "label": 88715547,
+      "lat": 24.5115,
+      "lng": 137.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 9,
+      "label": 345547,
+      "lat": 30.5115,
+      "lng": 50.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 10,
+      "label": 7615547,
+      "lat": 3.5115,
+      "lng": 134.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 11,
+      "label": 7158547,
+      "lat": 40.5115,
+      "lng": 80.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 12,
+      "label": 4415547,
+      "lat": 90.5115,
+      "lng": 20.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 13,
+      "label": 3415547,
+      "lat": 13.5115,
+      "lng": 31.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 14,
+      "label": 23547,
+      "lat": 21.5115,
+      "lng": -157.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    },
+    {
+      "id": 15,
+      "label": 334421,
+      "lat": 43.5115,
+      "lng": -174.0569,
+      "loc": "후쿠오카, 일본",
+      "star": 4.73,
+      "when": "4월 6일-11일",
+      "plus": "안뜰 전망",
+      "standard": "박",
+      "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
+    }
+  ],
+
   "roomList": [
     {
       "id": 0,
@@ -20,7 +402,7 @@
     },
     {
       "id": 1,
-      "like": false,
+      "like": true,
       "img": [
         "https://a0.muscache.com/im/pictures/miso/Hosting-50876204/original/9df41105-3c80-40c3-829a-d7fae852c15b.jpeg?im_w=720",
         "https://a0.muscache.com/im/pictures/miso/Hosting-432044/original/f2d20695-680c-4637-b72c-80238c0dd384.jpeg?im_w=720",
@@ -38,7 +420,7 @@
     },
     {
       "id": 2,
-      "like": false,
+      "like": true,
       "img": [
         "https://a0.muscache.com/im/pictures/miso/Hosting-50876204/original/9df41105-3c80-40c3-829a-d7fae852c15b.jpeg?im_w=720",
         "https://a0.muscache.com/im/pictures/miso/Hosting-432044/original/f2d20695-680c-4637-b72c-80238c0dd384.jpeg?im_w=720",

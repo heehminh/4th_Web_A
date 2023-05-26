@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-const Type = ({ setTypeIndex }) => {
+const Type = ({ setTypeIndex, setClick }) => {
   const [activeTypeItemId, setActiveTypeItemId] = useState(null);
   const [typeList, setTypeList] = useState([]);
 
   const handleTypeItemClick = (typeIdx) => {
     setActiveTypeItemId(typeIdx);
     setTypeIndex(typeIdx);
+    setClick(false);
   };
 
   useEffect(() => {

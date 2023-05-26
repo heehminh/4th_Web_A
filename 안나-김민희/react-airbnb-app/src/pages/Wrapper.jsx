@@ -16,7 +16,7 @@ export const Wrapper = () => {
 
   return (
     <div>
-      <Type setTypeIndex={setTypeIndex} />
+      <Type setTypeIndex={setTypeIndex} setClick={setClick} />
       <Content click={click} typeIndex={typeIndex} />
 
       <button id="button__map" onClick={changeContent}>

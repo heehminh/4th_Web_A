@@ -2,20 +2,20 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useSetRecoilState } from "recoil";
-import { loginAtom, nameAtom, emailAtom } from "../../../recoil/atom";
+import { loginAtom } from "../../../recoil/atom";
 
 const MemberModal = () => {
   const setIsLogin = useSetRecoilState(loginAtom);
-  const setName = useSetRecoilState(nameAtom);
-  const setEmail = useSetRecoilState(emailAtom);
 
   const navigate = useNavigate();
 
   const clickLogOut = () => {
     setIsLogin(false);
-    setName("");
-    setEmail("");
     navigate(`../`);
+
+    localStorage.setItem("loginAtom", false);
+    localStorage.removeItem("nameAtom");
+    localStorage.removeItem("emailAtom");
   };
 
   return (

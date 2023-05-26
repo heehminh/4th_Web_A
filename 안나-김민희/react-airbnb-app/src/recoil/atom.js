@@ -2,15 +2,19 @@ import { atom } from "recoil";
 
 export const nameAtom = atom({
   key: "nameAtom",
-  default: "",
+  default: localStorage.getItem("nameAtom")
+    ? localStorage.getItem("nameAtom")
+    : "",
 });
 
 export const emailAtom = atom({
   key: "emailAtom",
-  default: "",
+  default: localStorage.getItem("emailAtom")
+    ? localStorage.getItem("emailAtom")
+    : "",
 });
 
 export const loginAtom = atom({
   key: "loginAtom",
-  default: false,
+  default: localStorage.getItem("loginAtom") === "true" ? true : false,
 });
