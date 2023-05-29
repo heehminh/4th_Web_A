@@ -16,5 +16,7 @@ export const emailAtom = atom({
 
 export const loginAtom = atom({
   key: "loginAtom",
-  default: localStorage.getItem("loginAtom") === "true" ? true : false,
+  default: {
+    token: localStorage.getItem("loginAtom") || null,
+  },
 });

@@ -196,7 +196,6 @@
       "type_description": "돔하우스"
     }
   ],
-
   "markers": [
     {
       "id": 1,
@@ -246,7 +245,6 @@
       "standard": "박",
       "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
     },
-
     {
       "id": 5,
       "label": 838426,
@@ -380,7 +378,6 @@
       "img": "https://a0.muscache.com/im/pictures/miso/Hosting-20197171/original/e91e7c20-3cce-468a-922c-3166726fa228.jpeg?im_w=720"
     }
   ],
-
   "roomList": [
     {
       "id": 0,
@@ -420,7 +417,7 @@
     },
     {
       "id": 2,
-      "like": true,
+      "like": false,
       "img": [
         "https://a0.muscache.com/im/pictures/miso/Hosting-50876204/original/9df41105-3c80-40c3-829a-d7fae852c15b.jpeg?im_w=720",
         "https://a0.muscache.com/im/pictures/miso/Hosting-432044/original/f2d20695-680c-4637-b72c-80238c0dd384.jpeg?im_w=720",
@@ -438,7 +435,7 @@
     },
     {
       "id": 3,
-      "like": false,
+      "like": true,
       "img": [
         "https://a0.muscache.com/im/pictures/miso/Hosting-50876204/original/9df41105-3c80-40c3-829a-d7fae852c15b.jpeg?im_w=720",
         "https://a0.muscache.com/im/pictures/miso/Hosting-432044/original/f2d20695-680c-4637-b72c-80238c0dd384.jpeg?im_w=720",

@@ -1,30 +1,47 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { useQuery } from "react-query";
 import Article from "./Article";
 import Footer from "./Footer";
 import Map from "./Map";
 
 const Content = ({ click, typeIndex }) => {
-  const [markers, setMarkers] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
+  const { isLoading, isError, data, error } = useQuery(
+    "markers",
+    async () => {
       try {
         const response = await axios.get("/markers");
-        setMarkers(response.data);
+        return response.data;
       } catch (error) {
-        console.log(error);
+        throw new Error(error.message);
       }
-    };
-    fetchData();
-  }, []);
+    },
+    {
+      refetchOnWindowFocus: false,
+      retry: 0,
+      onSuccess: (data) => {
+        console.log(data);
+      },
+      onError: (e) => {
+        console.log(e.message);
+      },
+    }
+  );
+
+  if (isLoading) {
+    return <span>Loading...</span>;
+  }
+
+  if (isError) {
+    return <span>Error: {error.message}</span>;
+  }
 
   if (click) {
     // Map
     return (
       <div>
         <div id="content">
-          <Map markers={markers} />
+          <Map markers={data} />
         </div>
       </div>
     );

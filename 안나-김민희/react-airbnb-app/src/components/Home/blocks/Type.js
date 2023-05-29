@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { useQuery } from "react-query";
 
 const Type = ({ setTypeIndex, setClick }) => {
   const [activeTypeItemId, setActiveTypeItemId] = useState(null);
-  const [typeList, setTypeList] = useState([]);
 
   const handleTypeItemClick = (typeIdx) => {
     setActiveTypeItemId(typeIdx);
@@ -12,17 +12,40 @@ const Type = ({ setTypeIndex, setClick }) => {
     setClick(false);
   };
 
-  useEffect(() => {
-    axios
-      .get("/typeList")
-      .then((res) => setTypeList(res.data))
-      .catch((error) => console.log(error));
-  }, []);
+  const { isLoading, isError, data, error } = useQuery(
+    "typeList",
+    async () => {
+      try {
+        const response = await axios.get("/typeList");
+        return response.data;
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+    {
+      refetchOnWindowFocus: false,
+      retry: 0,
+      onSuccess: (data) => {
+        console.log(data);
+      },
+      onError: (e) => {
+        console.log(e.message);
+      },
+    }
+  );
+
+  if (isLoading) {
+    return <span>Loading...</span>;
+  }
+
+  if (isError) {
+    return <span>Error: {error.message}</span>;
+  }
 
   return (
     <Wrapper>
       <TypeWrapper>
-        {typeList.map((type, index) => (
+        {data.map((type, index) => (
           <TypeItem
             key={index}
             className={activeTypeItemId === type.type_idx ? "active" : ""}

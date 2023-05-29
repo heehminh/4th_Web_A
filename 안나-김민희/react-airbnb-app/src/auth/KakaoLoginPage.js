@@ -24,14 +24,16 @@ const KakaoLoginPage = () => {
 
     setIsLogin(true);
 
-    localStorage.setItem("loginAtom", isLogin);
-    localStorage.setItem("nameAtom", name);
-    localStorage.setItem("emailAtom", email);
+    // setName과 setEmail이 값을 변경한 후에 localStorage.setItem을 호출
+    localStorage.setItem("loginAtom", token);
+    localStorage.setItem("nameAtom", data.profile.properties.nickname);
+    localStorage.setItem("emailAtom", data.profile.kakao_account.email);
   };
 
   const kakaoOnFailrue = (error) => {
     console.log(error);
     setIsLogin(false);
+    localStorage.removeItem("loginAtom");
   };
 
   return (
