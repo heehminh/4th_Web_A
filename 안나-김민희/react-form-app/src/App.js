@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useForm } from "react-hook-form";
 
 const App = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   return (
     <Wrapper>
       <Box title="true">
@@ -79,7 +79,7 @@ const App = () => {
         </Box>
         <BtnBox>
           <SubmitBtn type="submit">제출</SubmitBtn>
-          <RemoveBtn>양식 지우기</RemoveBtn>
+          <RemoveBtn onClick={() => reset()}>양식 지우기</RemoveBtn>
         </BtnBox>
       </form>
     </Wrapper>
