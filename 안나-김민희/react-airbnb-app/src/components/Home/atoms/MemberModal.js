@@ -13,7 +13,7 @@ const MemberModal = () => {
     setIsLogin(false);
     navigate(`../`);
 
-    localStorage.setItem("loginAtom", false);
+    localStorage.removeItem("loginAtom");
     localStorage.removeItem("nameAtom");
     localStorage.removeItem("emailAtom");
   };
