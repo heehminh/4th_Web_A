@@ -6,38 +6,64 @@ const App = () => {
   const { register, handleSubmit } = useForm();
   return (
     <Wrapper>
-      <Box title>
+      <Box title="true">
         <Title>행사 참석 여부</Title>
         <Description>
           행사장 주소: 서울시 강남구 가나다로 123, 12345 <br />
           연락처 정보: (+82)000-0000 또는 abcd@gmail.com
         </Description>
       </Box>
-      <form onSubmit={handleSubmit((data) => alert(JSON.stringify(data)))}>
+      <form
+        onSubmit={handleSubmit((data) => {
+          alert(JSON.stringify(data));
+        })}
+      >
         <Box>
-          <Label htmlFor="name">참석하는 사람들의 성함을 알려주세요.</Label>
+          <Label htmlFor="name">
+            참석하는 사람들의 성함을 알려주세요. <Requried>*</Requried>
+          </Label>
           <Input
-            text
+            text="true"
             id="name"
             type="text"
             name="name"
             placeholder="내 답변"
-            {...register("name")}
+            {...register("name", {
+              required: "이름은 필수 입력입니다.",
+              minLength: {
+                value: 2,
+                message: "이름을 2글자 이상 작성해주세요.",
+              },
+            })}
           />
         </Box>
         <Box>
           <Label htmlFor="how">행사에 관해 어떻게 알게 되셨나요?</Label>
           <RadioBox>
-            <Input type="radio" name="how" {...register("how")} /> 웹사이트
+            <Input
+              type="radio"
+              name="how"
+              value="웹사이트"
+              {...register("how")}
+            />
+            웹사이트
           </RadioBox>
           <RadioBox>
-            <Input type="radio" name="how" {...register("how")} /> 친구
+            <Input type="radio" name="how" value="친구" {...register("how")} />
+            친구
           </RadioBox>
           <RadioBox>
-            <Input type="radio" name="how" {...register("how")} /> 뉴스레터
+            <Input
+              type="radio"
+              name="how"
+              value="뉴스레터"
+              {...register("how")}
+            />
+            뉴스레터
           </RadioBox>
           <RadioBox>
-            <Input type="radio" name="how" {...register("how")} /> 광고
+            <Input type="radio" name="how" value="광고" {...register("how")} />
+            광고
           </RadioBox>
         </Box>
         <Box>
@@ -142,4 +168,8 @@ const RemoveBtn = styled.button`
   font-size: 1.3rem;
   border-radius: 10px;
   cursor: pointer;
+`;
+
+const Requried = styled.span`
+  color: red;
 `;
