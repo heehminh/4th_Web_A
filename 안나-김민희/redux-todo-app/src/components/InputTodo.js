@@ -4,7 +4,7 @@ import { add } from "../redux/todoSlice";
 
 const InputTodo = () => {
   const dispatch = useDispatch();
-  const [todolist, setTodolist] = useState({ id: 0, text: "" });
+  const [todolist, setTodolist] = useState({ id: 0, text: "", date: "" });
 
   const handleText = (e) => {
     setTodolist({ text: e.target.value });
@@ -13,9 +13,10 @@ const InputTodo = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (todolist.text !== "") {
-      dispatch(add(todolist.text));
+      const formattedDate = new Date().toLocaleString();
+      dispatch(add({ text: todolist.text, date: formattedDate }));
     }
-    setTodolist({ text: "" });
+    setTodolist({ text: "", date: "" });
   };
 
   return (

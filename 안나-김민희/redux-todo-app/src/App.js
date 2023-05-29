@@ -1,22 +1,15 @@
 import React from "react";
-import { styled } from "styled-components";
-import InputTodo from "./components/InputTodo";
-import TodoList from "./components/TodoList";
+import Home from "./components/Home";
+import { Routes, Route } from "react-router-dom";
+import TodoDetail from "./components/TodoDetail";
 
 const App = () => {
   return (
-    <Wrapper>
-      <InputTodo />
-      <TodoList />
-    </Wrapper>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/:id" element={<TodoDetail />}></Route>
+    </Routes>
   );
 };
 
 export default App;
-
-const Wrapper = styled.div`
-  border: 1px solid gray;
-  margin: 20px;
-  padding: 20px;
-  width: 40vw;
-`;

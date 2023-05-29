@@ -2,10 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove, complete } from "../redux/todoSlice";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const TodoList = () => {
   const todoList = useSelector((state) => state.todo);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const todoListView = todoList.map((todo, index) => (
     <Item key={todoList[index].id}>
@@ -13,8 +15,8 @@ const TodoList = () => {
         type="checkbox"
         onChange={() => dispatch(complete(todoList[index].id))}
       />
-      <div>
-        {todo.complete === false ? (
+      <div onClick={() => navigate(`../${todoList[index].id}`)}>
+        {todo.completed === false ? (
           <div>{todo.text}</div>
         ) : (
           <Done>{todo.text}</Done>
