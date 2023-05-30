@@ -5,14 +5,22 @@ import TodoList from "./TodoList";
 
 const Home = () => {
   return (
-    <Wrapper>
-      <InputTodo />
-      <TodoList />
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <InputTodo />
+        <TodoList />
+      </Wrapper>
+    </Container>
   );
 };
 
 export default Home;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
 
 const Wrapper = styled.div`
   border: 1px solid gray;

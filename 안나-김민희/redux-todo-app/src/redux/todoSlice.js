@@ -25,9 +25,11 @@ export const todoSlice = createSlice({
       return state.filter((e) => e.id !== action.payload);
     },
     complete: (state, action) => {
-      return state.map((e) =>
-        e.id === action.payload ? { ...e, complete: !e.complete } : e
-      );
+      const todoId = action.payload;
+      const todo = state.find((todo) => todo.id === todoId);
+      if (todo) {
+        todo.completed = !todo.completed;
+      }
     },
     updateMemo: (state, action) => {
       const { id, memo } = action.payload;
