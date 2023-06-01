@@ -29,6 +29,10 @@ const Wrapper = styled.div`
   margin: 64px 110px;
   background-color: rgb(247, 247, 247);
   border-radius: 20px;
+
+  @media screen and (max-width: 1400px) {
+    display: none;
+  }
 `;
 
 const Img = styled.img`

@@ -16,6 +16,13 @@
   color: black;
 }
 
+@media screen and (max-width: 1400px) {
+  .silder,
+  .intro__income__slider {
+    width: 100%;
+  }
+}
+
 .intro__income__slider:active .intro__income__description {
   visibility: hidden;
 }

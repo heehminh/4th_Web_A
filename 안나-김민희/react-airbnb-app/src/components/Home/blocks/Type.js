@@ -1,19 +1,51 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import types from "../data/types";
+import axios from "axios";
+import { useQuery } from "react-query";
 
-const Type = ({ setTypeIndex }) => {
+const Type = ({ setTypeIndex, setClick }) => {
   const [activeTypeItemId, setActiveTypeItemId] = useState(null);
 
   const handleTypeItemClick = (typeIdx) => {
     setActiveTypeItemId(typeIdx);
     setTypeIndex(typeIdx);
+    setClick(false);
   };
+
+  const { isLoading, isError, data, error } = useQuery(
+    "typeList",
+    async () => {
+      try {
+        const response = await axios.get("/typeList");
+        return response.data;
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+    {
+      refetchOnWindowFocus: false,
+      retry: 0,
+      onSuccess: (data) => {
+        console.log(data);
+      },
+      onError: (e) => {
+        console.log(e.message);
+      },
+    }
+  );
+
+  if (isLoading) {
+    return <span>Loading...</span>;
+  }
+
+  if (isError) {
+    return <span>Error: {error.message}</span>;
+  }
 
   return (
     <Wrapper>
       <TypeWrapper>
-        {types.map((type, index) => (
+        {data.map((type, index) => (
           <TypeItem
             key={index}
             className={activeTypeItemId === type.type_idx ? "active" : ""}
@@ -39,8 +71,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  margin: 30px;
+  justify-content: flex-start;
+  margin: 85px 30px 0px 30px;
+  padding: 30px 0px 10px 0px;
+  top: 0;
+  background-color: white;
 `;
 
 const TypeWrapper = styled.div`

@@ -28,6 +28,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 const HostWrapper = styled.div`
   width: 1400px;
 `;
